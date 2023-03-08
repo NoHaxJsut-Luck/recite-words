@@ -10,6 +10,7 @@ import requests
 import pyperclip
 import random
 import time
+import pyttsx3
 
 rootUrl = 'http://www.iciba.com/word?w='
 
@@ -135,6 +136,7 @@ elif(mode == '2'):
     print("本次加载了" + str(len(checklist)) + "个,单词,请好好背诵哦")
 #开始背单词
     for i in checklist: #i 代表这次要考察的单词
+        pyttsx3.speak(i[0]) #文字转语音
         print(i[0])
         loc = random.randint(0,3)#确定随机位置
         for j in range(0,4):  #打印选项的部分
